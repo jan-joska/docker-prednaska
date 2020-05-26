@@ -36,6 +36,8 @@ Narozdíl od virtuálů, kontejnery dokážou sdílet shodné části, které ke
 
 # Z čeho se skládá Docker
 
+![Součásti Docker](https://github.com/jan-joska/docker-prednaska/blob/master/Images/engine-components-flow.png)
+
 Řešení Docker pro kontejnerizaci aplikací se skládá z těchto částí: 
 
 ### Docker Host
