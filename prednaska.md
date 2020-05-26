@@ -34,6 +34,11 @@ Narozdíl od virtuálů, kontejnery dokážou sdílet shodné části, které ke
 
 ![Rozdíl virtuální stroj a kontejner](https://github.com/jan-joska/docker-prednaska/blob/master/Images/virtual-vs-container.png)
 
+Kontejnery dokážkou využívat společné části, které mají vydefinovány a liší se jen v tzv. vrstvách což jsou příkazy, které pozměnili přidělený filesystém. To vede k účelnému využívaní prostředků a k malé velikosti kontejnerů.
+
+![Vrstvy v kontejnerech](https://github.com/jan-joska/docker-prednaska/blob/master/Images/container-overview-layers.png)
+
+
 # Z čeho se skládá Docker
 
 
