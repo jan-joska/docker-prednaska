@@ -104,7 +104,7 @@ Né každý stažený image má k dispozici dockerfile.
 3. Spustíme příkaz `docker pull mcr.microsoft.com/mssql/server:2017-latest`
 4. Po stáhnutí si ověříme jaké všechny image máme v lokálním úložišti `docker image ls`
 5. Nebude vytvářet náš vlastní image odvozený od stáhnutého, ale rovnou vytvoříme ad hoc vytvořený kontejner
-6. Spustíme `docker run --rm -e ACCEPT_EULA=Y -e SA_PASSWORD=ComplexPassword123 mcr.microsoft.com/mssql/server:2017-latest` 
+6. Spustíme `docker run --rm -p 1450:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=ComplexPassword123 mcr.microsoft.com/mssql/server:2017-latest` 
 
 Rozpad příkazu 
 
@@ -113,6 +113,8 @@ Rozpad příkazu
   <dd>CLI příkaz pro rozběhnutí kontejneru založeném na image</dd>
   <dt>--rm</dt>
   <dd>odstranit kontejner po doběhnutí</dd>
+ <dt>-p 1450:1433</dt>
+  <dd>Odkrýt (expose) port zevnitř kontejneru do hostovacího stroje. Formát PORT_NA_HOSTU:PORT_V_KONTEJNERU </dd>
  <dt>-e </dt>
   <dd>Nastavit environmentální proměnnou - tímto způsobem probíhá předávání učitých startup proměnných do instance image</dd>
  <dt>mcr.microsoft.com/mssql/server:2017-latest</dt>
