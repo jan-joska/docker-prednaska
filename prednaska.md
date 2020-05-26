@@ -133,3 +133,12 @@ CONTAINER ID        IMAGE                                        COMMAND        
 81fd9be6a8c1        mcr.microsoft.com/mssql/server:2017-latest   "/opt/mssql/bin/nonr…"   18 minutes ago      Up 17 minutes       1433/tcp                 cranky_shaw
 ```
 
+Mohu se připojit `STD_IN`, `STD_OUT` a `STD_ERR` do konzole příkazem `docker attach sharp_franklin, ale sql server nic nevypisuje
+
+Mohu na běžícím kontejneru spusit příkazovou řádku a připojit interaktivní konzoli příkazem `docker exec -it sharp_franklin /bin/bash`
+
+```
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community>docker exec -it sharp_franklin /bin/bash
+root@843ba189b0f0:/#
+```
+
