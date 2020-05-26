@@ -64,7 +64,26 @@ Spuštěná instance Docker image s vlastní sadou parametrů (pokud jsou vyžad
 - Standardizace - poběží kdekoliv, kde je podpora pro docker
 - Malá velikost - umí sdílet součásti (ve kterých se neliší) s jinými konterjnery
 - Izolovaný - Nesdílí žadné pro něj specifické prostředky
+
+Spouštění konterjnerů zabere řáově sekundy nikoliv minuty jako u virtuálních strojů.
+Kontejner se stará o jeden spuštěný proces. Představuje spuštěnou úlohu. Poté co hlavní proces zaniká, zaniká i konterjner. Může to být spuštění jednoho příkazu v příkazové řádce i spuštění webového serveru po dlouhou dobu. Jakákoliv data ukládaná do virtuálního filesystému jsou při zániku kontejneru ztracena.
  
+###  Volumes
+
+Kdyby kontejner neměl schopnost interagovat s hostitelským systémem nebyl by asi moc užitčený. Proto je nutné určité informace kontrolovaným způsobem vyměňovat. Volumes je prostředek jak umožnit přístup kontejnerů k filesystému hostovacího stroje. 
+
+Při ukládání dat do volumes, tyto data přežijí zánik kontejneru.
+
+### Networks
+
+Mezi kontejnery nebo jejich podmnožinami lze vytvářet virtuální sítě. Řídí se tím, jaké konterjery mohou spolu komunikovat.
+
+### Image repository
+
+Je úložiště pro docker image. Může být veřejné jako [Docker hub)(https://hub.docker.com/), nebo privátní.
+Pro nás je repository primární zdroj základních image pro vytváření našich vlastních konterjnerů
+Do repository mohu umisťovat vytvořené image.
+
 
  
 
