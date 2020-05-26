@@ -108,21 +108,15 @@ Né každý stažený image má k dispozici dockerfile.
 
 Rozpad příkazu 
 
-docker run
-: CLI příkaz pro rozběhnutí kontejneru založeném na image
-
---rm
-: odstranit kontejner po doběhnutí
-
--e 
-: Nastavit environmentální proměnnou - tímto způsobem probíhá předávání učitých startup proměnných do instance image
-
-mcr.microsoft.com/mssql/server:2017-latest
-: Název image mcr.microsoft.com/mssql/server včetně tagu 2017-latest
- 
-
-
-
-
+<dl>
+  <dt>docker run</dt>
+  <dd>CLI příkaz pro rozběhnutí kontejneru založeném na image</dd>
+  <dt>--rm</dt>
+  <dd>odstranit kontejner po doběhnutí</dd>
+ <dt>-e </dt>
+  <dd>Nastavit environmentální proměnnou - tímto způsobem probíhá předávání učitých startup proměnných do instance image</dd>
+ <dt>mcr.microsoft.com/mssql/server:2017-latest</dt>
+  <dd> Název image mcr.microsoft.com/mssql/server včetně tagu 2017-latest</dd>
+</dl>
 
 
