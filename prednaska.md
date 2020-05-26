@@ -127,4 +127,9 @@ Po opuštění konzole pomocí `CTRL-C` kontejner pokračuje v činnosti dokud n
 
 Ověříme, že stále běží pomocí `docker container ls`
 
-Ověříme jestli stále běží pomocí `docker container ls`
+```
+CONTAINER ID        IMAGE                                        COMMAND                  CREATED             STATUS              PORTS                    NAMES
+843ba189b0f0        mcr.microsoft.com/mssql/server:2017-latest   "/opt/mssql/bin/nonr…"   5 minutes ago       Up 5 minutes        0.0.0.0:1450->1433/tcp   sharp_franklin
+81fd9be6a8c1        mcr.microsoft.com/mssql/server:2017-latest   "/opt/mssql/bin/nonr…"   18 minutes ago      Up 17 minutes       1433/tcp                 cranky_shaw
+```
+
