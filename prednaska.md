@@ -108,14 +108,17 @@ Né každý stažený image má k dispozici dockerfile.
 
 Rozpad příkazu 
 
+docker run
+: CLI příkaz pro rozběhnutí kontejneru založeném na image
 
-| -rn                                        | Odstranit kontejner poté co zanikne                                                                                                      |
-| -e ACCEPT_EULA=Y                           | Nastavení environmentální proměnné ACCEPT_EULA na hodnotu Y                                                                              |
-| -e SA_PASSWORD=ComplexPassword123          | Nastaví environmentální proměnnou SA_PASSWORD na ComplexPassword123.</br>SQL server se odmítne spustit pokud heslo není dostatečně komplexní |
-| mcr.microsoft.com/mssql/server:2017-latest | Název image včetně TAGu                                                                                                                  |
+--rm
+: odstranit kontejner po doběhnutí
 
- 
+-e 
+: Nastavit environmentální proměnnou - tímto způsobem probíhá předávání učitých startup proměnných do instance image
 
+mcr.microsoft.com/mssql/server:2017-latest
+: Název image mcr.microsoft.com/mssql/server včetně tagu 2017-latest
  
 
 
