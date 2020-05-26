@@ -108,11 +108,13 @@ Né každý stažený image má k dispozici dockerfile.
 
 Rozpad příkazu 
 
-| -rn                                        | Odstranit kontejner poté co zanikne                                                                                                      |   |   |   |
-|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|
-| -e ACCEPT_EULA=Y                           | Nastavení environmentální proměnné ACCEPT_EULA na hodnotu Y                                                                              |   |   |   |
-| -e SA_PASSWORD=ComplexPassword123          | Nastaví environmentální proměnnou SA_PASSWORD na ComplexPassword123. SQL server se odmítne spustit pokud heslo není dostatečně komplexní |   |   |   |
-| mcr.microsoft.com/mssql/server:2017-latest | Název image včetně TAGu                                                                                                                  |   |   |   |
+
+| -rn                                        | Odstranit kontejner poté co zanikne                                                                                                      |
+| -e ACCEPT_EULA=Y                           | Nastavení environmentální proměnné ACCEPT_EULA na hodnotu Y                                                                              |
+| -e SA_PASSWORD=ComplexPassword123          | Nastaví environmentální proměnnou SA_PASSWORD na ComplexPassword123.</br>SQL server se odmítne spustit pokud heslo není dostatečně komplexní |
+| mcr.microsoft.com/mssql/server:2017-latest | Název image včetně TAGu                                                                                                                  |
+
+ 
 
  
 
