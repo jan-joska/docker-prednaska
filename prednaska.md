@@ -92,11 +92,51 @@ Je soubor s instrukcemi pro vytvoření image. Obsahuje sadu očekávatelných p
 
 Né každý stažený image má k dispozici dockerfile.
 
+### Instalace Dockeru do Windows
+
+- Musíme mít Windows 10 Professional s podporou HyperV
+- Stáhneme a nainstalujeme [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 
 # Příklad 1 - Stáhnutí a rozběhnutí SQL Serveru
 
 1. Prohledáme [http://hub.docker.com](http://hub.docker.com) a vyhledáme oficiální [image SQL Serveru](https://hub.docker.com/_/microsoft-mssql-server)
+2. Zvolíme si `2017-latest`
+3. Spustíme příkaz `docker pull mcr.microsoft.com/mssql/server:2017-latest`
+4. Po stáhnutí si ověříme jaké všechny image máme v lokálním úložišti `docker image ls`
 
+`
+c:\temp\docker-prednaska>docker image ls
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+<none>                                  <none>              bfda5eea9c02        38 hours ago        1.46GB
+<none>                                  <none>              26899a47a5f6        38 hours ago        755MB
+dockertestweb                           latest              9fa87bbac445        46 hours ago        215MB
+dockertestweb                           dev                 9c7b8031d832        47 hours ago        207MB
+testapp2                                latest              24fdb4ddf726        2 days ago          215MB
+testapp2                                dev                 ad3364cb2686        2 days ago          207MB
+experiment                              latest              c622cf7ac566        2 days ago          207MB
+aspnettest                              dev                 553f4456e98f        2 days ago          207MB
+testimage2                              latest              0a3e2451c08e        2 days ago          208MB
+testimage                               latest              154107244713        3 days ago          208MB
+rabbitmq                                3.8.3-management    867da7fcdf92        5 days ago          181MB
+mcr.microsoft.com/dotnet/core/sdk       3.1-buster          8c4dd5ac064a        6 days ago          705MB
+mcr.microsoft.com/dotnet/core/aspnet    3.1                 bc877ac43e02        6 days ago          207MB
+mcr.microsoft.com/dotnet/core/aspnet    3.1-buster-slim     bc877ac43e02        6 days ago          207MB
+mcr.microsoft.com/dotnet/core/aspnet    latest              bc877ac43e02        6 days ago          207MB
+mcr.microsoft.com/dotnet/core/runtime   3.1.4-alpine        7d59c9e17e18        6 days ago          87.2MB
+elasticsearch                           7.7.0               7ec4f35ab452        2 weeks ago         757MB
+rabbitmq                                3                   3e5ddca64bb7        2 weeks ago         151MB
+rabbitmq                                latest              3e5ddca64bb7        2 weeks ago         151MB
+rabbitmq                                3-management        fa535c4b51fe        4 weeks ago         181MB
+mongo                                   latest              3f3daf863757        4 weeks ago         388MB
+alpine                                  latest              f70734b6a266        4 weeks ago         5.61MB
+mcr.microsoft.com/mssql/server          2017-latest         d04f0f18f395        6 weeks ago         1.46GB
+mcr.microsoft.com/dotnet/core/samples   aspnetapp           dabaeff46a27        3 months ago        212MB
+mcr.microsoft.com/dotnet/core/samples   latest              c7a58a9742e5        3 months ago        190MB
+mcr.microsoft.com/dotnet/core/aspnet    3.0                 579be85d9bf6        3 months ago        207MB
+busybox                                 latest              6d5fcfe5ff17        5 months ago        1.22MB
+hello-world                             latest              fce289e99eb9        17 months ago       1.84kB
+prakhar1989/static-site                 latest              f01030e1dcf3        4 years ago         134MB
+`
 
 
  
