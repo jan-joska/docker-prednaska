@@ -32,7 +32,7 @@ Kontejner je jednotka software, která zaobaluje kód a všechny jeho závislost
 
 Narozdíl od virtuálů, kontejnery dokážou sdílet shodné části, které ke své činnosti potřebují, ale jsou dokonale izolovány jeden od druhého. 
 
-![Rozdíl virtuální stroj a kontejner](https://github.com/jan-joska/docker-prednaska/blob/master/Images/container-overview-layers.png)
+![Rozdíl virtuální stroj a kontejner](https://github.com/jan-joska/docker-prednaska/blob/master/Images/virtual-vs-container.png)
 
 # Z čeho se skládá Docker
 
