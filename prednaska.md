@@ -34,13 +34,35 @@ Narozdíl od virtuálů, kontejnery dokážou sdílet shodné části, které ke
 
 ![Rozdíl virtuální stroj a kontejner](https://github.com/jan-joska/docker-prednaska/blob/master/Images/virtual-vs-container.png)
 
-Kontejnery dokážkou využívat společné části, které mají vydefinovány a liší se jen v tzv. vrstvách což jsou příkazy, které pozměnili přidělený filesystém. To vede k účelnému využívaní prostředků a k malé velikosti kontejnerů.
-
-![Vrstvy v kontejnerech](https://github.com/jan-joska/docker-prednaska/blob/master/Images/container-overview-layers.png)
-
-
 # Z čeho se skládá Docker
 
+Řešení Docker pro kontejnerizaci aplikací se skládá z těchto částí: 
+
+### Docker Host
+
+Je fyzický počítač nebo virtuální stroj využívající Linux nebo Widnows. Může to být laptop, server, virtuální stroj v datacentru nebo zdroj v cloudu. Na tomto hostu-hostiteli běží Docker daemon
+
+### Docker daemon - server
+
+Docker daemon je služba běžící na hostovacím operačním systému. Svoje funkce vystavuje pomocí REST API. Původně služba musela běžet pouze na operačním systému Linux, protože využívala některé jeho funkce. Ale nyní je k dispozici i pro Windows a MacOS.
+
+### Docker CLI (Command-line interface)
+
+[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/) je klient sloužící k ovládání Docker služby.
+
+### Docker image
+
+Docker image je read-only šablona, která obsahuje monžinu instrukcí pro vytvoření kontejneru, který může běžet na Docker platformě.
+Dal by se představit jako instrukce k vytvoření kontejneru za pomocí příkazů, kde každý z nich vytvoří novou vrstvu. 
+Hrubě by se dalo přirovnat k třídě z které jsou vytvářeny instance-kontejnery.
+
+### Container
+
+Spuštěná instance Docker image s vlastní sadou parametrů (pokud jsou vyžadovány). Získává automaticky tyto vlastnosti:
+- Standardizace - poběží kdekoliv, kde je podpora pro docker
+- Malá velikost - umí sdílet součásti (ve kterých se neliší) s jinými konterjnery
+- Izolovaný - Nesdílí žadné pro něj specifické prostředky
+ 
 
  
 
