@@ -58,6 +58,8 @@ Docker image je read-only šablona, která obsahuje monžinu instrukcí pro vytv
 Dal by se představit jako instrukce k vytvoření kontejneru za pomocí příkazů, kde každý z nich vytvoří novou vrstvu. 
 Hrubě by se dalo přirovnat k třídě z které jsou vytvářeny instance-kontejnery.
 
+[Název image](https://cloud.google.com/artifact-registry/docs/docker/names) se skládá ze základní části a jednoho nebo několiga tagů. Jestliže tag není uveden využije se výchozí tag latest. 
+
 ### Container
 
 Spuštěná instance Docker image s vlastní sadou parametrů (pokud jsou vyžadovány). Získává automaticky tyto vlastnosti:
@@ -83,6 +85,18 @@ Mezi kontejnery nebo jejich podmnožinami lze vytvářet virtuální sítě. Ř�
 Je úložiště pro docker image. Může být veřejné jako [Docker hub)(https://hub.docker.com/), nebo privátní.
 Pro nás je repository primární zdroj základních image pro vytváření našich vlastních konterjnerů
 Do repository mohu umisťovat vytvořené image.
+
+### Docker file 
+
+Je soubor s instrukcemi pro vytvoření image. Obsahuje sadu očekávatelných příkazů pro přípravu prostředí pro kontejner. Uzancí je název .dockerfile
+
+Né každý stažený image má k dispozici dockerfile.
+
+
+# Příklad 1 - Stáhnutí a rozběhnutí SQL Serveru
+
+1. Prohledáme [http://hub.docker.com](http://hub.docker.com) a vyhledáme oficiální [image SQL Serveru](https://hub.docker.com/_/microsoft-mssql-server)
+
 
 
  
