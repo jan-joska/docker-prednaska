@@ -121,4 +121,10 @@ Rozpad příkazu
   <dd> Název image mcr.microsoft.com/mssql/server včetně tagu 2017-latest</dd>
 </dl>
 
+Na SQL server se lze nyní připojit např. pomocí SQL Management studio takto `localhost, 1450`
 
+Po opuštění konzole pomocí `CTRL-C` kontejner pokračuje v činnosti dokud není nějakým způsobem zastaven jeho hlavní proces.
+
+Ověříme, že stále běží pomocí `docker container ls`
+
+Ověříme jestli stále běží pomocí `docker container ls`
