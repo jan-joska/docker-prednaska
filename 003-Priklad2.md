@@ -88,6 +88,10 @@ A vidíme, že environmentální proměnná byla správně nastavena
 {"version":"1"}
 ```
 
+## K čemu lze toto využít
 
+Tento postup je vhodný v situaci, kdy si přejeme mít schopnost spustit různé verze aplikace. Po každém releasu do produkce může být vytvořen nový image se všemi potřebnými závislostmi a konfiguracemi.
+
+Tento postup není vhodný k vývoji, protože při každé změně by se musel kontejner rebuildovat.
 
 
