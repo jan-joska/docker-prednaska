@@ -42,5 +42,22 @@ Na SQL server se lze nyní připojit např. pomocí SQL Management studio takto 
 
 Ověříme, že stále běží pomocí `docker container ls`
 
+## Následné činnosti
+
+Běžící kontejner můžeme:
+
+- Zastavit `docker stop sqlserver2017`
+- Znovu rozběhnout `docker start sqlserver2017`
+- Smazat `docker continer rm sqlserver2017`
+- Restartovat `docker restart sqlserver2017`
+- Spustit příkaz na řádce `docker exec sqlserver2017 ls`
+- Spusit interaktivní terminál a vykonávat libovolné příkazy `docker exec -it sqlserver2017 bin/bash`
+- Využít `sqlcmd` přítomné v kontejneru k napojení na SQL Server `/opt/mssql-tools/bin/sqlcmd -U sa -P ComplexPassword123 -q "SELECT getdate()"`
+
+
+
+
+
+
 
 
