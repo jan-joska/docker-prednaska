@@ -60,6 +60,19 @@ Hrubě by se dalo přirovnat k třídě z které jsou vytvářeny instance-konte
 
 [Název image](https://cloud.google.com/artifact-registry/docs/docker/names) se skládá ze základní části a jednoho nebo několiga tagů. Jestliže tag není uveden využije se výchozí tag latest. 
 
+#### Příklad názvu image v úložišti ####
+`mcr.microsoft.com/mssql/server:2019-latest`
+
+#### Příklad tagů ####
+
+```
+2017-latest
+2019-latest
+2019-CU4-ubuntu-16.04
+2019-GDR1-ubuntu-16.04
+2017-CU8-ubuntu
+```
+
 ### Container
 
 Spuštěná instance Docker image s vlastní sadou parametrů (pokud jsou vyžadovány). Získává automaticky tyto vlastnosti:
@@ -72,9 +85,9 @@ Kontejner se stará o jeden spuštěný proces. Představuje spuštěnou úlohu.
  
 ###  Volumes
 
-Kdyby kontejner neměl schopnost interagovat s hostitelským systémem nebyl by asi moc užitčený. Proto je nutné určité informace kontrolovaným způsobem vyměňovat. Volumes je prostředek jak umožnit přístup kontejnerů k filesystému hostovacího stroje. 
+Kdyby kontejner neměl schopnost interagovat s hostitelským systémem nebyl by asi moc užitčený. Všechna změněná data jsou zapsána ve filesystému kontejneru a zanikají společně s ním.
 
-Při ukládání dat do volumes, tyto data přežijí zánik kontejneru.
+Pokud si přejeme data zachovat, nebo sdílet mezi kontejnery využíváme tzv. volumes. Je to abstrakce adresáře, který je naveden buď na náhodně vytvořený adresář v hostitelském systému, anbo do konkrétního adresáře. Může být pojmenovaný nebo opatřen náhodným jménem. 
 
 ### Networks
 
@@ -141,4 +154,9 @@ Mohu na běžícím kontejneru spusit příkazovou řádku a připojit interakti
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community>docker exec -it sharp_franklin /bin/bash
 root@843ba189b0f0:/#
 ```
+
+
+
+
+
 
