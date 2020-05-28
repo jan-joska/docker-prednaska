@@ -78,6 +78,15 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 3e646a66c8aa        demoapi:ver1        "dotnet DemoApi.dll"   24 seconds ago      Up 23 seconds       0.0.0.0:18000->80/tcp   demoapi1
 ```
 
+Zadáme URL do prohlížeče 
+
+```http://localhost:18000/functions/getversion``` 
+
+A vidíme, že environmentální proměnná byla správně nastavena
+
+```
+{"version":"1"}
+```
 
 
 
