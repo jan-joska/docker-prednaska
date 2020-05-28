@@ -23,4 +23,6 @@ Pro naše účely vyhledáme na [docker hubu vhodný image](https://hub.docker.c
 Vhodný pro naše účel je `mcr.microsoft.com/dotnet/core/aspnet:3.1`
 
 Image stáhneme pomocí příkazu [pull](https://docs.docker.com/engine/reference/commandline/pull/)
+```
 docker pull mcr.microsoft.com/dotnet/core/aspnet:3.1
+```
