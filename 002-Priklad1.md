@@ -26,7 +26,7 @@ docker run --name "sqlserver2017" -d -p 1450:1433 -e ACCEPT_EULA=Y -e SA_PASSWOR
 Rozpad příkazu 
 
 <dl>
-  <dt>[docker run](https://docs.docker.com/engine/reference/run/)</dt>
+  <dt>(docker run)[https://docs.docker.com/engine/reference/run/]</dt>
   <dd>CLI příkaz pro rozběhnutí kontejneru založeném na image</dd>
   <dt>-d</dt>
   <dd>Vytvořit v detached stavu - na pozadí. Neuvidíme `std_out`</dd>
