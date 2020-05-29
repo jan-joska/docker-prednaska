@@ -28,7 +28,7 @@ RUN dotnet publish "ConsoleApp.csproj" -c Release -o /app/ConsoleApp
 
 FROM mcr.microsoft.com/dotnet/core/runtime:3.1 as final
 WORKDIR /app/ConsoleApp
-COPY <b>--from=publish</b> /app/ConsoleApp .
+COPY --from=publish /app/ConsoleApp .
 ENTRYPOINT ["dotnet", "ConsoleApp.dll"]
 ```
 
