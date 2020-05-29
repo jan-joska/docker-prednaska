@@ -99,16 +99,20 @@ Je úložiště pro docker image. Může být veřejné jako [Docker hub)(https:
 Pro nás je repository primární zdroj základních image pro vytváření našich vlastních konterjnerů
 Do repository mohu umisťovat vytvořené image.
 
+### Vrstvy docker
+
+Díky principu znovupoužitelnosti vrstev v dockeru dochází k účelnému znovuužívání již vytvořených images. Každý příkaz vykonaný v kontejneru překopírovává ovlivněné soubory do nesvrchnější vrstvý, která jediná je Read/Write. Všechny vrstvy pod ní jsou read-only kopie souboru z vrstvy pod nimi.
+
+![Vrstvy docker](https://github.com/jan-joska/docker-prednaska/blob/master/Images/layers.PNG)
+
+
 ### Docker file 
 
 Je soubor s instrukcemi pro vytvoření image. Obsahuje sadu očekávatelných příkazů pro přípravu prostředí pro kontejner. Uzancí je název .dockerfile
 
 Né každý stažený image má k dispozici dockerfile.
 
-### Instalace Dockeru do Windows
 
-- Musíme mít Windows 10 Professional s podporou HyperV
-- Stáhneme a nainstalujeme [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 
 
 
