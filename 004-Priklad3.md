@@ -1,18 +1,35 @@
-# Příklad 3 - ASP.NET Core 3.1 aplikace vyvýjená na hostu, konzumovaná v kontejneru
+# Příklad 3 - Multistage build
 
-Tento příklad má za cíl demonstrovat propojitelnost filesystémů mezi hostem a kontejnerem.
+K vytvoření image je někdy zapotřebí použít jiných konterjnerů s různými schopnostmi. Příklad:
 
-Kroky k zpřístupnění filesystému: 
+Pro překlad a publish aplikace napsané v `.net core 3.1` potřebuji mít stroj s nainstalovaným `SDK` - využiji tedy image `mcr.microsoft.com/dotnet/core/sdk:3.1-buster`
 
-1. Stáhnutí image vhodného pro provoz ASP.NET Core 3.1 aplikace
-3. Spuštění kontejneru s přístpem na filesystém hostitele
+Pro spuštění aplikace ale žádné SDK nepotřebuji a přítomné nástroje by zvětšovaly velikost výsledného zájmového image. Pro spuštění aplikace bohatě postačí přítomnost `.net core 3.1 Runtime` a tedy image `mcr.microsoft.com/dotnet/core/runtime:3.1`
 
-## 1. Stáhnutí image
+Docker podporuje tzv. multistage build (vícefázový build), kdy utilitární image potřebné pro vytvoření finálního vznikají a zanikají dle potřeby. Mezi konterjnery lze jednoduše pomocí příkazů kopírovat výsledky jejich práce.
 
-`docker pull mcr.microsoft.com/dotnet/core/aspnet:3.1`
+Příklad: 
 
-## 2. Spuštění kontejneru s přístupem na filesystém hostitele
+```dockerfile
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /src/ConsoleApp
+COPY ["*.csproj", ""]
 
-``
+RUN dotnet restore "ConsoleApp.csproj"
+COPY . .
+
+RUN dotnet build "ConsoleApp.csproj" -c Release
+
+WORKDIR /src/ConsoleApp/build
+
+FROM build AS publish
+WORKDIR /src/ConsoleApp
+RUN dotnet publish "ConsoleApp.csproj" -c Release -o /app/ConsoleApp
+
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1 as final
+WORKDIR /app/ConsoleApp
+COPY --from=publish /app/ConsoleApp .
+ENTRYPOINT ["dotnet", "ConsoleApp.dll"]
+```
 
 
