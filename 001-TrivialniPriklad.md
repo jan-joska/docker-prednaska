@@ -1,30 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@jan-joska 
-jan-joska
-/
-docker-prednaska
-1
-00
- Code
- Issues 0
- Pull requests 0 Actions
- Projects 0
- Wiki
- Security 0
- Insights
- Settings
-docker-prednaska/001-TrivialniPriklad
-@jan-joska jan-joska Create 001-TrivialniPriklad
-516d0fd 10 seconds ago
-35 lines (23 sloc)  918 Bytes
-  
 # Triviální příklad funkce dockeru
 
 Provedeme: 
