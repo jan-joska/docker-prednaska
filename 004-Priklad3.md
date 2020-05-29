@@ -8,7 +8,13 @@ Pro spuštění aplikace ale žádné SDK nepotřebuji a přítomné nástroje b
 
 Docker podporuje tzv. multistage build (vícefázový build), kdy utilitární image potřebné pro vytvoření finálního vznikají a zanikají dle potřeby. Mezi konterjnery lze jednoduše pomocí příkazů kopírovat výsledky jejich práce.
 
-Příklad: 
+Komplexní příklad:
+
+- Máme konzolovou aplikaci v .net core 3.1
+- Pro zajištění izolovaného buildu a třeba spuštění testů si přejeme build vykonávat v izolovaném konterjneru
+- Výslednou aplikaci si přejeme spustit bez jakéhokoliv balastu v konterjeru s běhovým prostředím
+
+
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
