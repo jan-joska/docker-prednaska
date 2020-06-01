@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  demo2.console: 
+    container_name: demo2.console
+    image: ${DOCKER_REGISTRY-}demo2console
+    depends_on:
+      - demo2.db
+      - demo2.rabbitmq
+    build:
+      context: .
+      dockerfile: Demo2.Console/Dockerfile
+    environment:
+    - "SQL_CS=Server=host.docker.internal,1435;User Id=sa;Password=ComplexPassword123;"
+    - "MQ_HOST=host.docker.internal"
+  
+  
+  
+  demo2.db:
+    container_name: demo2.db
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=ComplexPassword123
+    - MSSQL_PID=Express
+    ports:
+      - "1435:1433"
+    volumes:
+    - "./database:/database"
+  
+
+
+  demo2.rabbitmq:
+    container_name: demo2.rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672" # management
+      - "5671:5671"
+      - "5672:5672"
